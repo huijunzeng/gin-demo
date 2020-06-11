@@ -1,19 +1,13 @@
 package services
 
 import (
+	"fmt"
 	"gin-demo/models"
-	"gin-demo/repositories"
+	mapper "gin-demo/repositories"
 )
 
-type UserService struct {
-	userDao *repositories.UserDao
-}
-
-func NewUserService() *UserService {
-	return &UserService{&repositories.UserDao{}}
-}
-
-func (u UserService) GetUserListByPage() []models.User {
-	userList := u.userDao.GetUserListByPage()
+func GetUserListByPage() []*models.User {
+	fmt.Println("==================-------------------------===")
+	userList := mapper.GetUserListByPage()
 	return userList
 }

@@ -24,7 +24,65 @@ var doc = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {}
+    "paths": {
+        "/hello": {
+            "get": {
+                "description": "接口详细描述信息",
+                "tags": [
+                    "用户信息"
+                ],
+                "summary": "接口概要说明",
+                "responses": {
+                    "200": {
+                        "description": "{\"message\":\"success\"}\"  //成功返回的数据结构， 最后是示例",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/print": {
+            "get": {
+                "description": "This is a sample server Petstore server.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "打印测试功能",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Name",
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":200,\"data\":\"name\",\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/test": {
+            "get": {
+                "description": "描述信息",
+                "summary": "测试接口",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
 }`
 
 type swaggerInfo struct {

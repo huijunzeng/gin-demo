@@ -25,6 +25,23 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/api/v1/getUserListByPage": {
+            "get": {
+                "description": "查询用户列表接口",
+                "tags": [
+                    "用户信息"
+                ],
+                "summary": "查询用户列表接口",
+                "responses": {
+                    "200": {
+                        "description": "{\"message\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/hello": {
             "get": {
                 "description": "Hello接口",

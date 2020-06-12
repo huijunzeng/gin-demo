@@ -1,21 +1,14 @@
 package repositories
 
 import (
-	db "gin-demo/common"
-	models1 "gin-demo/models"
+	"gin-demo/common"
+	"gin-demo/models"
 	_ "github.com/go-sql-driver/mysql"
 )
 
-type UserDao struct {
-}
-
-func NewUserDao() *UserDao {
-	return &UserDao{}
-}
-
-func (r UserDao) GetUserListByPage() []models1.User {
-	var userList []models1.User
-	db.MysqlDB.Table("t_user").Find(&userList)
+func GetUserListByPage() []*models.User {
+	var userList []*models.User
+	common.DB.Table("t_users").Find(&userList)
 
 	return userList
 }

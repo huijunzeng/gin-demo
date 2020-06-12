@@ -25,16 +25,33 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/hello": {
+        "/api/v1/getUserListByPage": {
             "get": {
-                "description": "接口详细描述信息",
+                "description": "查询用户列表接口",
                 "tags": [
                     "用户信息"
                 ],
-                "summary": "接口概要说明",
+                "summary": "查询用户列表接口",
                 "responses": {
                     "200": {
-                        "description": "{\"message\":\"success\"}\"  //成功返回的数据结构， 最后是示例",
+                        "description": "{\"message\":\"success\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/hello": {
+            "get": {
+                "description": "Hello接口",
+                "tags": [
+                    "用户信息"
+                ],
+                "summary": "Hello接口",
+                "responses": {
+                    "200": {
+                        "description": "{\"message\":\"success\"}",
                         "schema": {
                             "type": "string"
                         }

@@ -8,7 +8,7 @@ import (
 
 func GetUserListByPage() []*models.User {
 	var userList []*models.User
-	common.DB.Table("t_users").Find(&userList)
+	common.DB.Debug().Table("t_users").Find(&userList)
 
 	return userList
 }

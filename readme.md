@@ -1,5 +1,15 @@
 ## gin框架demo
 
+***
+GOROOT、GOPATH、Go Modules的区别：   
+GOROOT：Go的SDK的安装路径   
+GOPATH：Go11版本之前流行的依赖包管理，用于管理第三方库   
+Go Modules：官方推出的依赖版管理，等同于Java的Maven
+
+可通过命令 go env 查看环境变量设置   
+假如使用Goland开发工具，可以不设置GOPATH（会直接使用默认设置），直接使用Go Modules管理依赖包
+***
+
 官方文档：https://gin-gonic.com/docs/
 
 下载安装gin依赖包  

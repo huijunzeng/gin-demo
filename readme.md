@@ -3,10 +3,9 @@
 ***
 GOROOT、GOPATH、Go Modules的区别：   
 GOROOT：Go的SDK的安装路径   
-GOPATH：Go11版本之前流行的依赖包管理，用于管理第三方库   
-Go Modules：官方推出的依赖版管理，等同于Java的Maven
-
-可通过命令 go env 查看环境变量设置   
+GOPATH：Go1.11版本之前旧的依赖包管理，用于管理第三方库，安装SDK时会默认一个GOPATH路径，可通过 `go env` 查看    
+Go Modules：官方推出的依赖包管理，等同于Java的Maven；go.mod文件包含了所需依赖包（使用方式：需先执行 `go env -w GO111MODULE=on` 开启Go Module支持，然后执行 `go mod init [projectName]` 生成go.mod文件；当 modules 功能启用时，依赖包的存放位置变更为 $GOPATH/pkg ）
+  
 假如使用Goland开发工具，可以不设置GOPATH（会直接使用默认设置），直接使用Go Modules管理依赖包
 ***
 

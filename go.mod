@@ -13,6 +13,7 @@ require (
 	github.com/jinzhu/gorm v1.9.12
 	github.com/json-iterator/go v1.1.10 // indirect
 	github.com/mailru/easyjson v0.7.1 // indirect
+	github.com/spf13/viper v1.7.1 // indirect
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/swaggo/swag v1.6.7
 	golang.org/x/net v0.0.0-20200602114024-627f9648deb9 // indirect

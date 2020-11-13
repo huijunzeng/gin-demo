@@ -1,16 +1,34 @@
 package main
 
 import (
+	"fmt"
 	"gin-demo/common"
+	"gin-demo/config"
 	"gin-demo/router"
 	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
 	"net/http"
 )
 
 func main() {
 
+	c := &config.Config{}
+	filename := "./config/config.yml"
+	viper.SetConfigType("yaml")
+	viper.SetConfigFile(filename)
+
+	err := viper.ReadInConfig()
+	if err != nil {
+		fmt.Println("error: ", err)
+	}
+	err = viper.Unmarshal(c)
+	if err != nil {
+		fmt.Println("error: ", err)
+	}
+	fmt.Println("===========: ", *c)
+
 	// 初始化数据库连接
-	err := common.InitDB()
+	err = common.InitDB()
 	if err != nil {
 		panic(err)
 	}
@@ -28,7 +46,7 @@ func main() {
 	}
 
 	// 不指定ip地址和端口时，默认是监听并在 0.0.0.0:8080 上启动服务，另外的写法还有Run(":8080")、Run("0.0.0.0:8080")、Run("localhost:8080")都是指定http://localhost:8080或者http://127.0.0.1:8080/
-	router.Run()
+	router.Run("localhost:8088")
 }
 
 // @Summary 打印测试功能

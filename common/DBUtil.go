@@ -1,6 +1,7 @@
 package common
 
 import (
+	_ "gin-demo/config"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )

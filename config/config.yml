@@ -1,0 +1,11 @@
+server:
+  port: 8088
+
+
+##[MySQL]
+mysql:
+  username: zeng@19940125...
+  password: 123456
+  url: 129.211.34.120:3306
+  dbname: gin_demo
+  config: charset=utf8&parseTime=True&loc=Local

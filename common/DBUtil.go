@@ -1,17 +1,21 @@
 package common
 
 import (
-	_ "gin-demo/config"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 
-// 定义一个全局对象DB
+// 定义一个全局对象db
 var DB *gorm.DB
 
 // 定义一个初始化数据库的函数
 func InitDB() (err error) {
+
+	//mysql := &config.Mysql{}
+	//log.Println("mysql:", mysql)
 	// DSN:Data Source Name
+	//dsn := Mysql.Username + ":" + mysql.Password + "@tcp(" + mysql.Url + ")/" + mysql.Dbname + "?" + mysql.Config
+	//log.Println("dsn:", dsn)
 	dsn := "root:zeng@19940125...@tcp(129.211.34.120:3306)/gin_demo?charset=utf8&parseTime=True&loc=Local"
 	// 注意！！！这里不要使用:=，我们是给全局变量赋值，然后在main函数中使用全局变量db
 	DB, err = gorm.Open("mysql", dsn)

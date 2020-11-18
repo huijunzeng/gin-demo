@@ -63,3 +63,9 @@ go get -u github.com/go-sql-driver/mysql
 ```
 go get -u github.com/jinzhu/gorm
 ```
+
+***
+Go的一些约定规范：  
+1.文件名使用小写    
+2.用大小写来控制函数的可见性，暴露出去的函数需大写字母开头，不需要暴露出去的需要小写字母开头，都遵循驼峰命名      
+3.变量使用驼峰命名

@@ -4,8 +4,8 @@ server:
 
 ##[MySQL]
 mysql:
-  username: zeng@19940125...
-  password: 123456
+  username: root
+  password: zeng@19940125...
   url: 129.211.34.120:3306
   dbname: gin_demo
   config: charset=utf8&parseTime=True&loc=Local
